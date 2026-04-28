@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Direção Visual Estratégica</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Inter', 'sans-serif']
+          },
+          colors: {
+            accent: '#C2410C'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #F5F5F5;
+      color: #0A0A0A;
+      font-family: Inter, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(0,0,0,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: .8s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    .lift-card { transition: .35s ease; }
+    .lift-card:hover { transform: translateY(-6px); }
+
+    .cta-pulse { position: relative; overflow: hidden; }
+    .cta-pulse::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      transform: translateX(-100%);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+      transition: .8s ease;
+    }
+    .cta-pulse:hover::before { transform: translateX(100%); }
+
+    .nav-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background: #C2410C;
+      z-index: 9999;
+    }
+  </style>
+</head>
+
+<body class="grid-bg">
+<div class="nav-progress" id="navProgress"></div>
+
+<!-- HERO -->
+<section class="min-h-screen flex items-center border-b border-black/10">
+  <div class="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center w-full">
+    <div class="reveal">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-6">Direção Criativa • IA • Posicionamento Visual</p>
+      <h1 class="font-display text-5xl md:text-7xl font-bold uppercase leading-[0.88] tracking-tight">
+        Imagem que<br>posiciona.<br>Marca que vende.
+      </h1>
+      <p class="mt-8 max-w-xl text-base md:text-lg leading-relaxed text-black/70">
+        Construo campanhas, retratos, branding e sistemas visuais que elevam percepção de marca,
+        aumentam autoridade e transformam presença digital em posicionamento estratégico.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <button class="border-[3px] border-black px-8 py-4 font-black uppercase text-sm cta-pulse">Ver Projetos</button>
+        <button class="border border-black px-8 py-4 font-bold uppercase text-sm">Vamos Construir</button>
+      </div>
+    </div>
+
+    <div class="border border-black min-h-[640px] flex items-center justify-center bg-black text-white reveal lift-card">
+      <div class="text-center px-8">
+        <p class="text-xs uppercase tracking-[0.2em] text-accent mb-4">Placeholder</p>
+        <p class="text-4xl uppercase font-bold">Seu Retrato Editorial</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- MANIFESTO -->
+<section class="border-b border-black/10 py-28">
+  <div class="max-w-5xl mx-auto px-6 text-center reveal">
+    <p class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-6">Posicionamento</p>
+    <h2 class="text-4xl md:text-6xl font-bold uppercase leading-[0.9] mb-10">
+      Não vendo design.<br>Construo percepção.
+    </h2>
+    <p class="max-w-3xl mx-auto text-lg leading-relaxed text-black/70">
+      O mercado não compra apenas estética. Compra confiança, valor percebido e autoridade.
+      Minha atuação começa antes do layout: na direção criativa que define como sua marca será lida,
+      lembrada e desejada.
+    </p>
+  </div>
+</section>
+
+<!-- AUTORIDADE -->
+<section class="border-b border-black/10 py-28">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+    <div class="reveal">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-6">Autoridade</p>
+      <h2 class="text-4xl md:text-6xl font-bold uppercase mb-8">Estratégia + estética + conversão</h2>
+      <p class="text-base leading-relaxed text-black/70 mb-6">
+        Cruzo direção criativa, branding, IA e posicionamento visual para construir presença de marca
+        com valor percebido superior.
+      </p>
+      <p class="text-base leading-relaxed text-black/70">
+        Campanhas, anúncios, retratos, páginas e branding precisam operar como sistema.
+      </p>
+    </div>
+    <div class="border border-black min-h-[520px] flex items-center justify-center reveal lift-card">
+      <div class="text-center px-8">
+        <p class="text-xs uppercase tracking-[0.2em] text-accent mb-4">Placeholder</p>
+        <p class="text-3xl uppercase font-bold">Imagem de Autoridade</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="border-b border-black/10 py-28">
+  <div class="max-w-7xl mx-auto px-6">
+    <p class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8 reveal">Serviços</p>
+    <div class="grid md:grid-cols-3 gap-0 border border-black">
+      <div class="border-r border-black p-8 lift-card reveal">
+        <h3 class="text-3xl font-bold uppercase mb-4">Campanhas</h3>
+        <p class="text-black/70">Anúncios visuais, lançamentos e campanhas que elevam percepção e conversão.</p>
+      </div>
+      <div class="border-r border-black p-8 lift-card reveal">
+        <h3 class="text-3xl font-bold uppercase mb-4">Retratos IA</h3>
+        <p class="text-black/70">Retratos editoriais e imagens premium para autoridade visual de alto valor.</p>
+      </div>
+      <div class="p-8 lift-card reveal">
+        <h3 class="text-3xl font-bold uppercase mb-4">Branding + Pages</h3>
+        <p class="text-black/70">Logo, identidade visual, landing pages e sites com coerência estratégica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section class="border-b border-black/10 py-28">
+  <div class="max-w-6xl mx-auto px-6 reveal">
+    <p class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-6">Método</p>
+    <h2 class="text-4xl md:text-6xl font-bold uppercase mb-14">
+      Estratégia.<br>Imagem.<br>Resultado.
+    </h2>
+    <div class="space-y-10 text-black/80">
+      <div><strong>01 — Diagnóstico de percepção:</strong> leitura da marca e ruídos visuais que reduzem autoridade.</div>
+      <div><strong>02 — Arquitetura visual:</strong> construção da narrativa visual e direção criativa premium.</div>
+      <div><strong>03 — Implementação:</strong> campanhas, retratos, páginas e branding com coerência estratégica.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="bg-black text-white py-32">
+  <div class="max-w-5xl mx-auto px-6 text-center reveal">
+    <p class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-6">Final</p>
+    <h2 class="text-4xl md:text-7xl font-bold uppercase leading-[0.9] mb-10">
+      Imagem sem direção<br>é só ruído visual.
+    </h2>
+    <p class="max-w-2xl mx-auto text-white/70 text-lg leading-relaxed mb-12">
+      O primeiro passo é entender o que sua imagem atual comunica —
+      e o que ela deveria comunicar para vender mais e posicionar melhor.
+    </p>
+    <button class="border-[3px] border-white px-10 py-5 font-black uppercase cta-pulse">
+      Vamos Elevar Sua Marca
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-10 border-t border-white/10 bg-black text-white">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-6 text-sm uppercase tracking-[0.15em]">
+    <div>Direção Visual Estratégica</div>
+    <div>Campanhas • Retratos • Branding • Pages</div>
+    <div>2026</div>
+  </div>
+</footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const progress = document.getElementById('navProgress');
+
+  const updateProgress = () => {
+    const scrollTop = window.scrollY;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const width = (scrollTop / height) * 100;
+    if (progress) progress.style.width = width + '%';
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+});
+</script>
+
+</body>
+</html>
